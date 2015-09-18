@@ -22,7 +22,7 @@ namespace RockPaperScissors
             "Scissors beats Paper and loses to Rock.\n" +
             "Paper beats Rock and loses to Scissors.\n" +
             "Scores are on the right. Good luck and have Fun!";
-            
+        int draw = 0;    
         int userScore = 0;  // user score
         int cpuScore = 0;  // cpu score
         int userPick = 0;  // user and cpu choices are as follows:
@@ -39,7 +39,7 @@ namespace RockPaperScissors
         private int cpuSelection()
         {
             Random rand = new Random();
-            return rand.Next(1, 4);
+            return cpuPick = rand.Next(1, 4);
         }
         // method to get user choice
         private int userSelection()
@@ -55,6 +55,15 @@ namespace RockPaperScissors
             else 
             {
                 return userPick = 3;
+            }
+        }
+        // method to update score
+        private void update(int u, int c)
+        {
+            if (u == 1 && c == 1)
+            {
+                draw++;
+                labelTieScore.Text = draw.ToString();
             }
         }
         // help click event
