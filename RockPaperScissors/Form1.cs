@@ -78,12 +78,54 @@ namespace RockPaperScissors
             if (u == 1 && c == 2)
             {
                 cpuScore++;
-
+                pictureBoxUserChoice.Image = Properties.Resources.rock;
+                pictureBoxCpuChoice.Image = Properties.Resources.paper;
             }
             if (u == 1 && c == 3)
             {
                 userScore++;
+                pictureBoxUserChoice.Image = Properties.Resources.rock;
+                pictureBoxCpuChoice.Image = Properties.Resources.scissors;
             }
+            if (u == 2 && c == 1)
+            {
+                userScore++;
+                pictureBoxUserChoice.Image = Properties.Resources.paper;
+                pictureBoxCpuChoice.Image = Properties.Resources.rock;
+            }
+            if (u == 2 && c == 2)
+            {
+                draw++;
+                pictureBoxUserChoice.Image = Properties.Resources.paper;
+                pictureBoxCpuChoice.Image = Properties.Resources.paper;
+            }
+            if (u == 2 && c == 3)
+            {
+                cpuScore++;
+                pictureBoxUserChoice.Image = Properties.Resources.paper;
+                pictureBoxCpuChoice.Image = Properties.Resources.scissors;
+            }
+            if (u == 3 && c == 1)
+            {
+                cpuScore++;
+                pictureBoxUserChoice.Image = Properties.Resources.scissors;
+                pictureBoxCpuChoice.Image = Properties.Resources.rock;
+            }
+            if (u == 3 && c == 2)
+            {
+                userScore++;
+                pictureBoxUserChoice.Image = Properties.Resources.scissors;
+                pictureBoxCpuChoice.Image = Properties.Resources.paper;
+            }
+            if (u == 3 && c == 3)
+            {
+                draw++;
+                pictureBoxUserChoice.Image = Properties.Resources.scissors;
+                pictureBoxCpuChoice.Image = Properties.Resources.scissors;
+            }
+
+
+
         }
         // help click event
         private void buttonHelp_Click(object sender, EventArgs e)
