@@ -40,10 +40,10 @@
             this.labelScoreCpu = new System.Windows.Forms.Label();
             this.labelCpuScore = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButtonRock = new System.Windows.Forms.RadioButton();
-            this.radioButtonPaper = new System.Windows.Forms.RadioButton();
             this.radioButtonScissors = new System.Windows.Forms.RadioButton();
             this.buttonSubmit = new System.Windows.Forms.Button();
+            this.radioButtonPaper = new System.Windows.Forms.RadioButton();
+            this.radioButtonRock = new System.Windows.Forms.RadioButton();
             this.buttonEndGame = new System.Windows.Forms.Button();
             this.labelTie = new System.Windows.Forms.Label();
             this.labelTieScore = new System.Windows.Forms.Label();
@@ -112,7 +112,7 @@
             // 
             // pictureBoxUserChoice
             // 
-            this.pictureBoxUserChoice.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxUserChoice.Image")));
+            this.pictureBoxUserChoice.Image = global::RockPaperScissors.Properties.Resources.rock;
             this.pictureBoxUserChoice.Location = new System.Drawing.Point(479, 67);
             this.pictureBoxUserChoice.Name = "pictureBoxUserChoice";
             this.pictureBoxUserChoice.Size = new System.Drawing.Size(225, 225);
@@ -122,7 +122,7 @@
             // 
             // pictureBoxCpuChoice
             // 
-            this.pictureBoxCpuChoice.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCpuChoice.Image")));
+            this.pictureBoxCpuChoice.Image = global::RockPaperScissors.Properties.Resources.scissors;
             this.pictureBoxCpuChoice.Location = new System.Drawing.Point(813, 67);
             this.pictureBoxCpuChoice.Name = "pictureBoxCpuChoice";
             this.pictureBoxCpuChoice.Size = new System.Drawing.Size(225, 225);
@@ -161,28 +161,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Make Selection";
             // 
-            // radioButtonRock
-            // 
-            this.radioButtonRock.AutoSize = true;
-            this.radioButtonRock.Location = new System.Drawing.Point(26, 61);
-            this.radioButtonRock.Name = "radioButtonRock";
-            this.radioButtonRock.Size = new System.Drawing.Size(51, 17);
-            this.radioButtonRock.TabIndex = 0;
-            this.radioButtonRock.TabStop = true;
-            this.radioButtonRock.Text = "Rock";
-            this.radioButtonRock.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonPaper
-            // 
-            this.radioButtonPaper.AutoSize = true;
-            this.radioButtonPaper.Location = new System.Drawing.Point(26, 114);
-            this.radioButtonPaper.Name = "radioButtonPaper";
-            this.radioButtonPaper.Size = new System.Drawing.Size(53, 17);
-            this.radioButtonPaper.TabIndex = 1;
-            this.radioButtonPaper.TabStop = true;
-            this.radioButtonPaper.Text = "Paper";
-            this.radioButtonPaper.UseVisualStyleBackColor = true;
-            // 
             // radioButtonScissors
             // 
             this.radioButtonScissors.AutoSize = true;
@@ -202,6 +180,28 @@
             this.buttonSubmit.TabIndex = 11;
             this.buttonSubmit.Text = "Submit Selection";
             this.buttonSubmit.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonPaper
+            // 
+            this.radioButtonPaper.AutoSize = true;
+            this.radioButtonPaper.Location = new System.Drawing.Point(26, 114);
+            this.radioButtonPaper.Name = "radioButtonPaper";
+            this.radioButtonPaper.Size = new System.Drawing.Size(53, 17);
+            this.radioButtonPaper.TabIndex = 1;
+            this.radioButtonPaper.TabStop = true;
+            this.radioButtonPaper.Text = "Paper";
+            this.radioButtonPaper.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonRock
+            // 
+            this.radioButtonRock.AutoSize = true;
+            this.radioButtonRock.Location = new System.Drawing.Point(26, 61);
+            this.radioButtonRock.Name = "radioButtonRock";
+            this.radioButtonRock.Size = new System.Drawing.Size(51, 17);
+            this.radioButtonRock.TabIndex = 0;
+            this.radioButtonRock.TabStop = true;
+            this.radioButtonRock.Text = "Rock";
+            this.radioButtonRock.UseVisualStyleBackColor = true;
             // 
             // buttonEndGame
             // 

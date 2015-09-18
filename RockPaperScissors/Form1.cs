@@ -57,13 +57,32 @@ namespace RockPaperScissors
                 return userPick = 3;
             }
         }
-        // method to update score
-        private void update(int u, int c)
+        // method to toString the scores
+        private void parseEm()
+        {
+            labelTieScore.Text = draw.ToString();
+            labelUserScore.Text = userScore.ToString();
+            labelCpuScore.Text = cpuScore.ToString();
+
+        }
+        // method to update score, rock=1, paper=2, scissors=3, u =user, c=cpu
+        private void update(int d, int u, int c)
         {
             if (u == 1 && c == 1)
             {
                 draw++;
-                labelTieScore.Text = draw.ToString();
+                pictureBoxUserChoice.Image = Properties.Resources.rock;
+                pictureBoxCpuChoice.Image = Properties.Resources.rock;
+                
+            }
+            if (u == 1 && c == 2)
+            {
+                cpuScore++;
+
+            }
+            if (u == 1 && c == 3)
+            {
+                userScore++;
             }
         }
         // help click event
