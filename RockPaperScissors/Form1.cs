@@ -16,31 +16,35 @@ namespace RockPaperScissors
         {
             InitializeComponent();
         }
+
         // declare & initilize variables
+        // constant string help message
         const string HELP = "Select a radio button and click submit to play a round.\n" +
             "Win States: Rock beats Scissors and loses to Paper.\n" +
             "Scissors beats Paper and loses to Rock.\n" +
             "Paper beats Rock and loses to Scissors.\n" +
             "Scores are on the right. Good luck and have Fun!";
+        // variables
         int draw = 0;    
         int userScore = 0;  // user score
         int cpuScore = 0;  // cpu score
         int userPick = 0;  // user and cpu choices are as follows:
         int cpuPick = 0;  // 1 = rock  2 = paper  3 = scissors
-        Boolean rock = false;
-        Boolean paper = false;
-        Boolean scissors = false;
+        Boolean validate = false;
+
         // method to display help instructions
         private void instructions()
         {
             MessageBox.Show(HELP);
         }
+
         // method to randomize cpu choice
         private int cpuSelection()
         {
             Random rand = new Random();
             return cpuPick = rand.Next(1, 4);
         }
+
         // method to get user choice
         private int userSelection()
         {
@@ -57,6 +61,7 @@ namespace RockPaperScissors
                 return userPick = 3;
             }
         }
+
         // method to toString the scores
         private void parseEm()
         {
@@ -65,6 +70,7 @@ namespace RockPaperScissors
             labelCpuScore.Text = cpuScore.ToString();
 
         }
+
         // method to update score, rock=1, paper=2, scissors=3, u =user, c=cpu
         private void update(int d, int u, int c)
         {
@@ -123,20 +129,42 @@ namespace RockPaperScissors
                 pictureBoxUserChoice.Image = Properties.Resources.scissors;
                 pictureBoxCpuChoice.Image = Properties.Resources.scissors;
             }
-
-
-
         }
+
+        // validation to continue
+        private void validation()
+        {
+            if (radioButtonRock.Checked == false || radioButtonPaper.Checked == false || radioButtonScissors.Checked == false)
+            {
+                validate = false;
+                MessageBox.Show("Click a radio button to make a selection please.");
+            }
+        }
+
         // help click event
         private void buttonHelp_Click(object sender, EventArgs e)
         {
             instructions();
         }
+
         // end game click event
         private void buttonEndGame_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Thanks for playing!");
             this.Close();
+        }
+
+        // start game click event
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -29,14 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.buttonStart = new System.Windows.Forms.Button();
             this.labelScoreUser = new System.Windows.Forms.Label();
             this.labelUserScore = new System.Windows.Forms.Label();
             this.labelUserChoice = new System.Windows.Forms.Label();
             this.labelCpuChoice = new System.Windows.Forms.Label();
-            this.pictureBoxUserChoice = new System.Windows.Forms.PictureBox();
-            this.pictureBoxCpuChoice = new System.Windows.Forms.PictureBox();
             this.labelScoreCpu = new System.Windows.Forms.Label();
             this.labelCpuScore = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -48,22 +45,14 @@
             this.labelTie = new System.Windows.Forms.Label();
             this.labelTieScore = new System.Windows.Forms.Label();
             this.buttonHelp = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUserChoice)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCpuChoice)).BeginInit();
+            this.pictureBoxCpuChoice = new System.Windows.Forms.PictureBox();
+            this.pictureBoxUserChoice = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCpuChoice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUserChoice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBoxLogo
-            // 
-            this.pictureBoxLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
-            this.pictureBoxLogo.Location = new System.Drawing.Point(12, 12);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(305, 168);
-            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBoxLogo.TabIndex = 0;
-            this.pictureBoxLogo.TabStop = false;
             // 
             // buttonStart
             // 
@@ -73,6 +62,7 @@
             this.buttonStart.TabIndex = 1;
             this.buttonStart.Text = "Start Game";
             this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
             // labelScoreUser
             // 
@@ -109,26 +99,6 @@
             this.labelCpuChoice.Size = new System.Drawing.Size(65, 13);
             this.labelCpuChoice.TabIndex = 5;
             this.labelCpuChoice.Text = "CPU Choice";
-            // 
-            // pictureBoxUserChoice
-            // 
-            this.pictureBoxUserChoice.Image = global::RockPaperScissors.Properties.Resources.rock;
-            this.pictureBoxUserChoice.Location = new System.Drawing.Point(479, 67);
-            this.pictureBoxUserChoice.Name = "pictureBoxUserChoice";
-            this.pictureBoxUserChoice.Size = new System.Drawing.Size(225, 225);
-            this.pictureBoxUserChoice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBoxUserChoice.TabIndex = 6;
-            this.pictureBoxUserChoice.TabStop = false;
-            // 
-            // pictureBoxCpuChoice
-            // 
-            this.pictureBoxCpuChoice.Image = global::RockPaperScissors.Properties.Resources.scissors;
-            this.pictureBoxCpuChoice.Location = new System.Drawing.Point(813, 67);
-            this.pictureBoxCpuChoice.Name = "pictureBoxCpuChoice";
-            this.pictureBoxCpuChoice.Size = new System.Drawing.Size(225, 225);
-            this.pictureBoxCpuChoice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBoxCpuChoice.TabIndex = 7;
-            this.pictureBoxCpuChoice.TabStop = false;
             // 
             // labelScoreCpu
             // 
@@ -241,6 +211,37 @@
             this.buttonHelp.UseVisualStyleBackColor = true;
             this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
             // 
+            // pictureBoxCpuChoice
+            // 
+            this.pictureBoxCpuChoice.Image = global::RockPaperScissors.Properties.Resources.scissors;
+            this.pictureBoxCpuChoice.Location = new System.Drawing.Point(813, 67);
+            this.pictureBoxCpuChoice.Name = "pictureBoxCpuChoice";
+            this.pictureBoxCpuChoice.Size = new System.Drawing.Size(225, 225);
+            this.pictureBoxCpuChoice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBoxCpuChoice.TabIndex = 7;
+            this.pictureBoxCpuChoice.TabStop = false;
+            // 
+            // pictureBoxUserChoice
+            // 
+            this.pictureBoxUserChoice.Image = global::RockPaperScissors.Properties.Resources.rock;
+            this.pictureBoxUserChoice.Location = new System.Drawing.Point(479, 67);
+            this.pictureBoxUserChoice.Name = "pictureBoxUserChoice";
+            this.pictureBoxUserChoice.Size = new System.Drawing.Size(225, 225);
+            this.pictureBoxUserChoice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBoxUserChoice.TabIndex = 6;
+            this.pictureBoxUserChoice.TabStop = false;
+            // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
+            this.pictureBoxLogo.Location = new System.Drawing.Point(12, 12);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(305, 168);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBoxLogo.TabIndex = 0;
+            this.pictureBoxLogo.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,11 +264,11 @@
             this.Controls.Add(this.pictureBoxLogo);
             this.Name = "Form1";
             this.Text = "Rock Paper Scissors";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUserChoice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCpuChoice)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCpuChoice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUserChoice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
