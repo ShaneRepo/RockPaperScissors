@@ -30,7 +30,7 @@ namespace RockPaperScissors
         int cpuScore = 0;  // cpu score
         int userPick = 0;  // user and cpu choices are as follows:
         int cpuPick = 0;  // 1 = rock  2 = paper  3 = scissors
-        Boolean validate = false;
+        Boolean validate = true;
 
         // method to display help instructions
         private void instructions()
@@ -139,6 +139,10 @@ namespace RockPaperScissors
                 validate = false;
                 MessageBox.Show("Click a radio button to make a selection please.");
             }
+            else
+            {
+                validate = true;
+            }
         }
 
         // help click event
@@ -157,9 +161,22 @@ namespace RockPaperScissors
         // start game click event
         private void buttonStart_Click(object sender, EventArgs e)
         {
+            labelUserScore.Text = "";
+            labelTieScore.Text = "";
+            labelCpuScore.Text = "";
+            MessageBox.Show("Click a radio button and press submit selection to start a new game.");
+        }
+
+        private void buttonSubmit_Click(object sender, EventArgs e)
+        {
             try
             {
-                
+                validation();
+                if (validate == true)
+                {
+
+                }
+
             }
             catch (Exception ex)
             {

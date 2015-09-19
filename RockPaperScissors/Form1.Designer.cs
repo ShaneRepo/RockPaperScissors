@@ -150,6 +150,7 @@
             this.buttonSubmit.TabIndex = 11;
             this.buttonSubmit.Text = "Submit Selection";
             this.buttonSubmit.UseVisualStyleBackColor = true;
+            this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
             // 
             // radioButtonPaper
             // 
