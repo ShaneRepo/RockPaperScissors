@@ -60,7 +60,7 @@
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(119, 23);
             this.buttonStart.TabIndex = 1;
-            this.buttonStart.Text = "Start Game";
+            this.buttonStart.Text = "Start New Game";
             this.buttonStart.UseVisualStyleBackColor = true;
             this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 

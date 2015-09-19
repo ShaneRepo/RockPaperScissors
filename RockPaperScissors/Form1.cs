@@ -20,7 +20,8 @@ namespace RockPaperScissors
         // declare & initilize variables
         // constant string help message
         const string HELP = "Select a radio button and click submit to play a round.\n" +
-            "Win States: Rock beats Scissors and loses to Paper.\n" +
+            "              Win States:\n" +
+            "Rock beats Scissors and loses to Paper.\n" +
             "Scissors beats Paper and loses to Rock.\n" +
             "Paper beats Rock and loses to Scissors.\n" +
             "Scores are on the right. Good luck and have Fun!";
@@ -31,6 +32,7 @@ namespace RockPaperScissors
         int userPick = 0;  // user and cpu choices are as follows:
         int cpuPick = 0;  // 1 = rock  2 = paper  3 = scissors
         Boolean validate = true;
+        Boolean playing = true;
 
         // method to display help instructions
         private void instructions()
@@ -72,7 +74,7 @@ namespace RockPaperScissors
         }
 
         // method to update score, rock=1, paper=2, scissors=3, u =user, c=cpu
-        private void update(int d, int u, int c)
+        private void update( int u, int c)
         {
             if (u == 1 && c == 1)
             {
@@ -134,10 +136,10 @@ namespace RockPaperScissors
         // validation to continue
         private void validation()
         {
-            if (radioButtonRock.Checked == false || radioButtonPaper.Checked == false || radioButtonScissors.Checked == false)
+            if (radioButtonRock.Checked == false && radioButtonPaper.Checked == false && radioButtonScissors.Checked == false)
             {
-                validate = false;
                 MessageBox.Show("Click a radio button to make a selection please.");
+                validate = false;
             }
             else
             {
@@ -154,6 +156,7 @@ namespace RockPaperScissors
         // end game click event
         private void buttonEndGame_Click(object sender, EventArgs e)
         {
+            playing = false;
             MessageBox.Show("Thanks for playing!");
             this.Close();
         }
@@ -171,12 +174,15 @@ namespace RockPaperScissors
         {
             try
             {
-                validation();
-                if (validate == true)
-                {
-
-                }
-
+                    validation();
+                    if (validate == true)
+                    {
+                        userSelection();
+                        cpuSelection();
+                        update(userPick, cpuPick);
+                        parseEm();
+                    }
+                
             }
             catch (Exception ex)
             {
